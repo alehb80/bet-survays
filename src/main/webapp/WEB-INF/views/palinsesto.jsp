@@ -76,7 +76,7 @@
 			<td>${palinsesto.nomepalinsesto}</td>
 			<td><a href="<c:url value='/edit/${palinsesto.id}' />" >Edit</a></td>
 			<td><a href="<c:url value='/remove/${palinsesto.id}' />" >Delete</a></td>
-			<td><a href="<c:url value="/index" />" >Lista Partite</a></td>
+			<td><a href="<c:url value="/home" />" >Lista Partite</a></td>
 		</tr>
 	</c:forEach>
 	</table>

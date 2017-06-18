@@ -7,7 +7,7 @@
 <title>Inserisci le tue credenziali</title>
 </head>
 <body>
-<form:form method="POST" action="loginadmin" modelAttribute="admin">
+<form:form method="POST" action="pannelloadmin" modelAttribute="admin">
     <table>
         <tr>
             <td><form:label path="email">Email:</form:label></td>
@@ -23,6 +23,8 @@
         </tr>
     </table>
 </form:form>
+
+<a href="palinsesti">vai ai palinsesti</a>
 
 </body>
 </html>
