@@ -34,28 +34,19 @@ public class PalinsestoController {
 		return "palinsesto";
 	}
 
-	
 	//For add and update person both
 	@RequestMapping(value= "/palinsesto/add", method = RequestMethod.POST)
 	public String addPalinsesto(@ModelAttribute("palinsesto") Palinsesto p){
-		
-		if(p.getId() == 0){
+		if(p.getId() == 0)
 			this.palinsestoService.addPalinsesto(p);
-			//
-			
-		}else{
+		else
 			this.palinsestoService.updatePalinsesto(p);
-			
-			
-		}
 		
 		return "redirect:/palinsesti";
-		
 	}
 	
 	@RequestMapping("/remove/{id}")
     public String removePalinsesto(@PathVariable("id") int id){
-		
         this.palinsestoService.removePalinsesto(id);
         return "redirect:/palinsesti";
     }
