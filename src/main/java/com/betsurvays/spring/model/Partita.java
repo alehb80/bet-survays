@@ -13,23 +13,24 @@ public class Partita {
 	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 
 	@Column(name="nome")
 	private String nome;
 
+	@ManyToOne
     @Column(name="idpalinsesto")
-    private Long idpalinsesto;
+    private int idpalinsesto;
 	
 	
 	public Partita(){}
 	
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -41,11 +42,11 @@ public class Partita {
 		this.nome = nome;
 	}
 
-	public Long getIdpalinsesto() {
+	public int getIdpalinsesto() {
 		return idpalinsesto;
 	}
 
-	public void setIdpalinsesto(Long idpalinsesto) {
+	public void setIdpalinsesto(int idpalinsesto) {
 		this.idpalinsesto = idpalinsesto;
 	}
 
