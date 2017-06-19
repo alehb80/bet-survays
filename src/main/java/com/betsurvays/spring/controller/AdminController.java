@@ -2,6 +2,7 @@ package com.betsurvays.spring.controller;
 
 import com.betsurvays.spring.model.Admin;
 import com.betsurvays.spring.model.Palinsesto;
+import com.betsurvays.spring.model.Partita;
 import com.betsurvays.spring.service.PalinsestoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -32,11 +33,10 @@ public class AdminController {
     public String listPalinsesti(Model model) {
         model.addAttribute("palinsesto", new Palinsesto());
         model.addAttribute("listPalinsesti", this.palinsestoService.listPalinsesti());
+        model.addAttribute("partita", new Partita());
         return "palinsesto";
     }
 
-
-    //For add and update person both
     @RequestMapping(value= "/palinsesto/add", method = RequestMethod.POST)
     public String addPalinsesto(@ModelAttribute("palinsesto") Palinsesto p){
         if(p.getId() == 0)
@@ -46,8 +46,6 @@ public class AdminController {
 
         return "redirect:/palinsesti";
     }
-
-
 
     @RequestMapping("/remove/{id}")
     public String removePalinsesto(@PathVariable("id") int id){

@@ -37,7 +37,7 @@
         <tr>
             <td>
                 <form:label path="nome">
-                    <spring:message text="Inserisci il nome di una p:"/>
+                    <spring:message text="Inserisci il nome di una Partita:"/>
                 </form:label>
             </td>
             <td>
