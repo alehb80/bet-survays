@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.betsurvays.spring.model.Palinsesto;
 
-
-
 public interface PalinsestoService {
 
 	public void addPalinsesto(Palinsesto p);

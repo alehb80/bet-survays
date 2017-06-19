@@ -2,12 +2,14 @@ package com.betsurvays.spring.model;
 
 import java.util.Date;
 
+import org.hibernate.annotations.Proxy;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="partita")
+@Proxy(lazy = false)
 public class Partita {
 
 	@Id
@@ -18,13 +20,10 @@ public class Partita {
 	@Column(name="nome")
 	private String nome;
 
-	@ManyToOne
-    @Column(name="idpalinsesto")
-    private int idpalinsesto;
-	
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	private Palinsesto palinsesto;
 	
 	public Partita(){}
-	
 
 	public int getId() {
 		return id;
@@ -42,12 +41,12 @@ public class Partita {
 		this.nome = nome;
 	}
 
-	public int getIdpalinsesto() {
-		return idpalinsesto;
+	public Palinsesto getPalinsesto() {
+		return palinsesto;
 	}
 
-	public void setIdpalinsesto(int idpalinsesto) {
-		this.idpalinsesto = idpalinsesto;
+	public void setPalinsesto(Palinsesto palinsesto) {
+		this.palinsesto = palinsesto;
 	}
 
 }

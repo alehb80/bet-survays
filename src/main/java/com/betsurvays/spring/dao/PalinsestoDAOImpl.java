@@ -38,7 +38,6 @@ public class PalinsestoDAOImpl implements PalinsestoDAO {
 	public List<Palinsesto> listPalinsesti() {
 		Session session = this.sessionFactory.getCurrentSession();
 		List<Palinsesto> palinsestiList = session.createQuery("from Palinsesto").list();
-		
 		return palinsestiList;
 	}
 
@@ -46,7 +45,6 @@ public class PalinsestoDAOImpl implements PalinsestoDAO {
 	public Palinsesto getPalinsestoById(int id) {
 		Session session = this.sessionFactory.getCurrentSession();		
 		Palinsesto p = (Palinsesto) session.load(Palinsesto.class, new Integer(id));
-		
 		return p;
 	}
 
@@ -57,7 +55,6 @@ public class PalinsestoDAOImpl implements PalinsestoDAO {
 		if(null != p){
 			session.delete(p);
 		}
-		
 	}
 
 }

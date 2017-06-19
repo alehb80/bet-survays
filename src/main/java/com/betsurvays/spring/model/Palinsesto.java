@@ -1,11 +1,9 @@
 package com.betsurvays.spring.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.Proxy;
+
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Entity bean with JPA annotations
@@ -15,6 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="palinsesto")
+@Proxy(lazy = false)
 public class Palinsesto {
 
 	@Id
@@ -24,6 +23,9 @@ public class Palinsesto {
 
 	@Column(name="nomepalinsesto")
 	private String nomepalinsesto;
+
+	@OneToMany(mappedBy = "palinsesto", fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+	private List<Partita> partite;
 
 	public int getId() {
 		return id;
@@ -41,8 +43,17 @@ public class Palinsesto {
 		this.nomepalinsesto = nomepalinsesto;
 	}
 
+	public List<Partita> getPartite() {
+		return partite;
+	}
+
+	public void setPartite(List<Partita> partite) {
+		this.partite = partite;
+	}
+
 	@Override
 	public String toString(){
 		return "id="+id+", name="+nomepalinsesto;
 	}
+
 }
