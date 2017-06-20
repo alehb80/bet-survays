@@ -39,21 +39,34 @@ public class PalinsestoController {
     @RequestMapping(value = "/partite/{id}", method = RequestMethod.GET)
     public String listPartite(@PathVariable("id") int id, Model model) {
         Palinsesto p = this.palinsestoService.getPalinsestoById(id);
-        model.addAttribute("partita", new Partita());
+        Partita partita = new Partita();
+        partita.setPalinsesto(p);
+
+        model.addAttribute("partita", partita);
         model.addAttribute("listPartite", this.partitaService.findByPalinsesto(p));
+        model.addAttribute("palinsesto", p);
 
         return "partita";
     }
 
     @RequestMapping(value= "/partita/add", method = RequestMethod.POST)
-    public String addPartita(@ModelAttribute("partita") Partita p){
+    public String addPartita(@ModelAttribute("palinsesto") Palinsesto p,@ModelAttribute("partita") Partita partita){
 
-        if(p.getId() == 0)
-            this.partitaService.addPartita(p);
+        if(partita.getId() == 0) {
+
+            this.partitaService.addPartita(partita);
+            //p.getPartite().add(partita);
+            //this.partitaService.updatePartita(partita);
+
+        }
         else
-            this.partitaService.updatePartita(p);
+            this.palinsestoService.updatePalinsesto(p);
 
-        return "partita";
+
+        return "redirect:/palinsesti";
     }
+
+
+
 
 }

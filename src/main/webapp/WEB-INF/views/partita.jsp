@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>
-    Aggiungi una Partita
+    Aggiungi una Partita al palinsesto --> ${palinsesto.id}
 </h1>
 
 <c:url var="addAction" value="/partita/add" ></c:url>

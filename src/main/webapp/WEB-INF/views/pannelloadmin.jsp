@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>Sei loggato!</h1>
-<h2><a href="palinsesti">Aggiungi palinsesto</a></h2>
+<h2><a href="palinsesti">Aggiungi Palinsesto</a></h2>
 </body>
 </html>

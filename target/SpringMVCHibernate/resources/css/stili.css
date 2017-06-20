@@ -1,5 +1,5 @@
 @CHARSET "ISO-8859-1";
-body 
+body
 {
   background: #FFFFFF url("stadio.jpg");
   background-repeat: no-repeat;
@@ -8,7 +8,6 @@ body
 
 }
 h1{color: #B0171F}
-
 div#topbar{
   
   font-size: 120%;
@@ -34,7 +33,6 @@ div#mainNav {
 
 a:link, a:visited {
     font-size: 30px  
-    color: #B0171F
 }
 
 
