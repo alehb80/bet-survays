@@ -29,6 +29,11 @@ public class AdminController {
     }
 
 
+    @RequestMapping(value = "/pannelloadmin", method = RequestMethod.GET)
+    public String homeAdmin(Model model) {
+        return "pannelloadmin";
+    }
+
     @RequestMapping(value = "/palinsesti", method = RequestMethod.GET)
     public String listPalinsesti(Model model) {
         model.addAttribute("palinsesto", new Palinsesto());

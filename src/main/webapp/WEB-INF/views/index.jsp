@@ -10,7 +10,7 @@
 <body>
 <h1>BetSurvays</h1>
 
-<h2><a href="loginadmin">Login</a></h2>
+<h2><a href="login">Login</a></h2>
 <h2><a href="home">Entra</a></h2>
 </body>
 </html>

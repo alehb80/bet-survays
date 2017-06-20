@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -20,9 +21,9 @@ public class HomeController {
 
     private PalinsestoService palinsestoService;
 
-    @Autowired(required=true)
-    @Qualifier(value="palinsestoService")
-    public void setPalinsestoService(PalinsestoService ps){
+    @Autowired(required = true)
+    @Qualifier(value = "palinsestoService")
+    public void setPalinsestoService(PalinsestoService ps) {
         this.palinsestoService = ps;
     }
 
@@ -32,10 +33,14 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(value="/loginadmin", method=RequestMethod.GET)
-    public ModelAndView mostraForm(){
-        Admin admin = new Admin();
-        return new ModelAndView("loginadmin","admin",admin);
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(ModelMap model) {
+        return "login";
     }
 
+    @RequestMapping(value = "/loginError", method = RequestMethod.GET)
+    public String loginError(ModelMap model) {
+        model.addAttribute("error", "true");
+        return "login";
+    }
 }

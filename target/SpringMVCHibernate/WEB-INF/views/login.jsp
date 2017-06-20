@@ -1,30 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Inserisci le tue credenziali</title>
+    <title>Login Page</title>
 </head>
-<body>
-<form:form method="POST" action="pannelloadmin" modelAttribute="admin">
+<body onload='document.loginForm.j_username.focus();'>
+<h3>Accedi:</h3>
+
+<%
+
+    String errorString = (String)request.getAttribute("error");
+    if(errorString != null && errorString.trim().equals("true")){
+        out.println("* E-mail o Password incorretti. Riprova usando E-mail e Password corretti.");
+    }
+%>
+
+<form name='loginForm' action="<c:url value='j_spring_security_check' />"
+      method='POST'>
+
     <table>
         <tr>
-            <td><form:label path="email">Email:</form:label></td>
-            <td><form:input path="email" /></td>
+            <td>E-mail:</td>
+            <td><input type='text' name='j_username' value=''>
+            </td>
         </tr>
         <tr>
-            <td><form:label path="pwd">Password:</form:label></td>
-            <td><form:input path="pwd" /></td>
+            <td>Password:</td>
+            <td><input type='password' name='j_password' />
+            </td>
         </tr>
-
         <tr>
-            <td><input type="submit" value="Submit" /></td>
+            <td><input name="submit" type="submit"
+                       value="Accedi" />
+            </td>
+            <td><input name="reset" type="reset" />
+            </td>
         </tr>
     </table>
-</form:form>
 
-<a href="palinsesti">vai ai palinsesti</a>
-
+</form>
 </body>
 </html>
