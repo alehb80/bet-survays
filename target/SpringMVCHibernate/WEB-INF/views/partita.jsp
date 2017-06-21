@@ -88,7 +88,7 @@
             <th width="120">Nome</th>
             <th width="60">Edit</th>
             <th width="60">Delete</th>
-            <th width="120">Vai alle Quote</th>
+
         </tr>
         <c:forEach items="${listPartite}" var="partita">
             <tr>
@@ -96,7 +96,7 @@
                 <td>${partita.nome}</td>
                 <td><a href="<c:url value='/edit/${partita.id}' />" >Edit</a></td>
                 <td><a href="<c:url value='/remove/${partita.id}' />" >Delete</a></td>
-                <td><a href="<c:url value="/home" />" >Lista Quote</a></td>
+                
             </tr>
         </c:forEach>
     </table>

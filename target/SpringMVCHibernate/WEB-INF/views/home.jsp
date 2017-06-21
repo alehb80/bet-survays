@@ -25,7 +25,7 @@
             <tr>
                 <td>${palinsesto.id}</td>
                 <td>${palinsesto.nomepalinsesto}</td>
-                <td><a href="<c:url value="/index" />" >Lista Partite</a></td>
+                <td><a href="<c:url value='/partitepal/${palinsesto.id}' />" >Lista Partite</a></td>
             </tr>
         </c:forEach>
     </table>

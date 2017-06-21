@@ -74,12 +74,7 @@
 		<beans:property name="partitaDAO" ref="partitaDAO"></beans:property>
 	</beans:bean>
 
-	<beans:bean id="mercatoDAO" class="com.betsurvays.spring.dao.MercatoDAOImpl">
-		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
-	<beans:bean id="mercatoService" class="com.betsurvays.spring.service.MercatoServiceImpl">
-		<beans:property name="mercatoDAO" ref="mercatoDAO"></beans:property>
-	</beans:bean>
+
 
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
