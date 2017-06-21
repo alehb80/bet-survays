@@ -82,6 +82,14 @@ public class PalinsestoController {
         return "partite";
     }
 
+    @RequestMapping("/removep/{id}")
+    public String removePartita(@PathVariable("id") int id){
+        this.partitaService.removePartita(id);
+        return "redirect:/palinsesti";
+    }
+
+
+
 
 
 }

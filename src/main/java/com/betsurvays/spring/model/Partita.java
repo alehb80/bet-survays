@@ -20,7 +20,7 @@ public class Partita {
 	@Column(name="nome")
 	private String nome;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @ManyToOne(cascade = {CascadeType.PERSIST})
 	private Palinsesto palinsesto;
 	
 	public Partita(){}

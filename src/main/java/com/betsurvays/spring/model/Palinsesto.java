@@ -24,7 +24,7 @@ public class Palinsesto {
 	@Column(name="nomepalinsesto")
 	private String nomepalinsesto;
 
-	@OneToMany(mappedBy = "palinsesto", fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+	@OneToMany(mappedBy = "palinsesto", fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE})
 	private List<Partita> partite;
 
 	public int getId() {

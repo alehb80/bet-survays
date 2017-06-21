@@ -86,7 +86,6 @@
         <tr>
             <th width="80">Partita ID</th>
             <th width="120">Nome</th>
-            <th width="60">Edit</th>
             <th width="60">Delete</th>
 
         </tr>
@@ -94,8 +93,7 @@
             <tr>
                 <td>${partita.id}</td>
                 <td>${partita.nome}</td>
-                <td><a href="<c:url value='/edit/${partita.id}' />" >Edit</a></td>
-                <td><a href="<c:url value='/remove/${partita.id}' />" >Delete</a></td>
+                <td><a href="<c:url value='/removep/${partita.id}' />" >Delete</a></td>
                 
             </tr>
         </c:forEach>
