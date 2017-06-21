@@ -40,6 +40,7 @@ public class PalinsestoController {
     public String listPartite(@PathVariable("id") int id, Model model) {
         Palinsesto p = this.palinsestoService.getPalinsestoById(id);
         Partita partita = new Partita();
+
         partita.setPalinsesto(p);
 
         model.addAttribute("partita", partita);
@@ -52,15 +53,23 @@ public class PalinsestoController {
     @RequestMapping(value= "/partita/add", method = RequestMethod.POST)
     public String addPartita(@ModelAttribute("palinsesto") Palinsesto p,@ModelAttribute("partita") Partita partita){
 
-        if(partita.getId() == 0) {
+        System.out.println(partita.getId());
+        System.out.println(partita.getId());
 
-            this.partitaService.addPartita(partita);
+        if(partita.getId()==0){
+            Partita p1 = new Partita();
+
+
+            this.partitaService.addPartita(p1);
+            p1.setNome(partita.getNome());
+            p1.setPalinsesto(partita.getPalinsesto());
+            this.partitaService.updatePartita(p1);
+        }
+
             //p.getPartite().add(partita);
             //this.partitaService.updatePartita(partita);
 
-        }
-        else
-            this.palinsestoService.updatePalinsesto(p);
+
 
 
         return "redirect:/palinsesti";

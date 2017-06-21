@@ -64,12 +64,7 @@
 					<a href="#">Bet-Survays</a>
 				</div>
 				<div class="col-lg-6 col-md-5 col-sm-5 text-center fh5co-link-wrap">
-					<ul data-offcanvass="yes">
-						<li class="active"><a href="#">&emsp;&emsp;&emsp;&emsp;Palinsesti</a></li>
-						<li><a href="#">Partite</a></li>
-						<li><a href="#">Quote</a></li>
-						<li><a href="#">Mercati</a></li>
-					</ul>
+
 				</div> 
 				<div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">
 					<ul class="fh5co-special" data-offcanvass="yes">

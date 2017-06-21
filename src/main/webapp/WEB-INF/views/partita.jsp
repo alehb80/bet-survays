@@ -14,26 +14,36 @@
 </head>
 <body>
 <h1>
-    Aggiungi una Partita al palinsesto --> ${palinsesto.id}
+    Aggiungi una Partita al palinsesto --> ${palinsesto.nomepalinsesto}
 </h1>
 
 <c:url var="addAction" value="/partita/add" ></c:url>
 
-<form:form action="${addAction}" commandName="partita">
+<form:form action="${addAction}" commandName="partita"  >
     <table>
         <c:if test="${!empty partita.nome}">
             <tr>
-                <td>
-                    <form:label path="id">
-                        <spring:message text="ID"/>
-                    </form:label>
-                </td>
-                <td>
-                    <form:input path="id" readonly="true" size="8"  disabled="true" />
-                    <form:hidden path="id" />
-                </td>
-            </tr>
+            <td>
+                <form:label path="id">
+                    <spring:message text="ID"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="id" readonly="true" size="8"  disabled="true" />
+                <form:hidden path="id" />
+            </td>
+        </tr>
         </c:if>
+        <tr>
+            <td>
+                <form:label path="id">
+                    <spring:message text="Id:"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="id" />
+            </td>
+        </tr>
         <tr>
             <td>
                 <form:label path="nome">
@@ -44,6 +54,16 @@
                 <form:input path="nome" />
             </td>
         </tr>
+        <tr>
+            <td>
+                <form:label path="palinsesto">
+                    <spring:message text="Nel palinsesto:"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="palinsesto.id" />
+            </td>
+        </tr>
 
         <tr>
             <td colspan="2">
@@ -51,7 +71,7 @@
                     <input type="submit"
                            value="<spring:message text="Edit Partita"/>" />
                 </c:if>
-                <c:if test="${empty partita.nome}">
+                <c:if test="${empty partita.nome}" >
                     <input type="submit"
                            value="<spring:message text="Add Partita"/>" />
                 </c:if>
