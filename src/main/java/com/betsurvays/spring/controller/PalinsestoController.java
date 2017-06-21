@@ -69,18 +69,19 @@ public class PalinsestoController {
         return "redirect:/palinsesti";
     }
     @RequestMapping(value = "/partitepal/{id}", method = RequestMethod.GET)
-    public String listPar(@PathVariable("id") int id, Model model) {
+    public String listParti(@PathVariable("id") int id, Model model) {
         Palinsesto p = this.palinsestoService.getPalinsestoById(id);
         Partita partita = new Partita();
 
         partita.setPalinsesto(p);
 
         model.addAttribute("partita", partita);
-        model.addAttribute("listPar", this.partitaService.findByPalinsesto(p));
+        model.addAttribute("listPartite", this.partitaService.findByPalinsesto(p));
         model.addAttribute("palinsesto", p);
 
-        return "partite";
+        return "par";
     }
+
 
     @RequestMapping("/removep/{id}")
     public String removePartita(@PathVariable("id") int id){

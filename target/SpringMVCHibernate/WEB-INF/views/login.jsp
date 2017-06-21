@@ -1,10 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
+    <link href="../../resources/css/st1.css" rel="stylesheet" type="text/css">
     <title>Login Page</title>
 </head>
 <body onload='document.loginForm.j_username.focus();'>
-<h3>Accedi:</h3>
+<h2>Accedi:</h2>
 
 <%
 
@@ -19,12 +20,12 @@
 
     <table>
         <tr>
-            <td>E-mail:</td>
+            <td><h4>E-mail:</h4></td>
             <td><input type='text' name='j_username' value=''>
             </td>
         </tr>
         <tr>
-            <td>Password:</td>
+            <td><h4>Password:</h4></td>
             <td><input type='password' name='j_password' />
             </td>
         </tr>

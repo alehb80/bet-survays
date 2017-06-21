@@ -4,6 +4,7 @@
 <%@ page session="false" %>
 <html>
 <head>
+    <link href="../../resources/css/st.css" rel="stylesheet" type="text/css">
     <title>Palinsesto Page</title>
     <style type="text/css">
         .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -13,13 +14,13 @@
     </style>
 </head>
 <body>
-<h3>Palinsesto List</h3>
+<div id="orizzontale"><h1>Lista dei Palinsesti</h1></div>
 <c:if test="${!empty listPalinsesti}">
-    <table class="tg">
+<div id="verticale"><table class="tg">
         <tr>
             <th width="80">Palinsesto ID</th>
             <th width="120">Nome</th>
-            <th width="120">Vai alle Partite</th>
+            <th width="230">Vai alle Partite</th>
         </tr>
         <c:forEach items="${listPalinsesti}" var="palinsesto">
             <tr>
@@ -28,7 +29,7 @@
                 <td><a href="<c:url value='/partitepal/${palinsesto.id}' />" >Lista Partite</a></td>
             </tr>
         </c:forEach>
-    </table>
+</table></div>
 </c:if>
 </body>
 </html>

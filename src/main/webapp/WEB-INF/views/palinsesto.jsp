@@ -4,6 +4,7 @@
 <%@ page session="false" %>
 <html>
 <head>
+	<link href="../../resources/css/st1.css" rel="stylesheet" type="text/css">
 	<title>Palinsesto Page</title>
 	<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -14,7 +15,7 @@
 </head>
 <body>
 <h1>
-	Aggiungi un Palinsesto
+	Aggiungi un nuovo Palinsesto:
 </h1>
 
 <c:url var="addAction" value="/palinsesto/add" ></c:url>
@@ -37,7 +38,7 @@
 	<tr>
 		<td>
 			<form:label path="nomepalinsesto">
-				<spring:message text="Inserisci il nome di un Palinsesto:"/>
+				<h4><spring:message text="Inserisci il nome di un Palinsesto:"/></h4>
 			</form:label>
 		</td>
 		<td>

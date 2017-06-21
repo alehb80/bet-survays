@@ -4,6 +4,7 @@
 <%@ page session="false" %>
 <html>
 <head>
+    <link href="../../resources/css/st1.css" rel="stylesheet" type="text/css">
     <title>Partita Page</title>
     <style type="text/css">
         .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -13,6 +14,7 @@
     </style>
 </head>
 <body>
+
 <h1>
     Aggiungi una Partita al palinsesto --> ${palinsesto.nomepalinsesto}
 </h1>
@@ -37,7 +39,7 @@
         <tr>
             <td>
                 <form:label path="id">
-                    <spring:message text="Id:"/>
+                    <h4><spring:message text="Id:"/></h4>
                 </form:label>
             </td>
             <td>
@@ -47,7 +49,7 @@
         <tr>
             <td>
                 <form:label path="nome">
-                    <spring:message text="Inserisci il nome di una Partita:"/>
+                    <h4><spring:message text="Inserisci il nome:"/></h4>
                 </form:label>
             </td>
             <td>
@@ -57,7 +59,7 @@
         <tr>
             <td>
                 <form:label path="palinsesto">
-                    <spring:message text="Nel palinsesto:"/>
+                    <h4><spring:message text="Nel palinsesto:"/></h4>
                 </form:label>
             </td>
             <td>
@@ -80,7 +82,7 @@
     </table>
 </form:form>
 <br>
-<h3>Partite List</h3>
+<h3>Partite presenti:</h3>
 <c:if test="${!empty listPartite}">
     <table class="tg">
         <tr>
@@ -99,5 +101,6 @@
         </c:forEach>
     </table>
 </c:if>
+
 </body>
 </html>
